@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="cekwarnaIcon.png">
+    <style>
+        .color_window {
+            width: auto;
+            height: 500px;
+            border: 2px solid #000;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+    </style>
+    <title>Cek Warna By Dafa</title>
+</head>
+<body>
+    <div>
+        <h1>Cek Palet Warna</h1>
+    </div>
+    <div class="color_window">
+        <img src="cekwarnaIcon.png" alt="" style="margin-top: 0px;" width="100px">
+    </div>
+    <div>
+        <label for="colorPicker">Masukkan Kode Palet Warna</label>
+        <input type="text" id="colorPicker" placeholder="misalkan #ffffff">
+    </div>
+
+    <script>
+        const colorWindow = document.querySelector('.color_window');
+        const colorPicker = document.getElementById('colorPicker');
+
+        colorPicker.addEventListener('input', function() {
+            const value = colorPicker.value;
+            if (value[0] == "#"){
+                colorWindow.style.backgroundColor = value;
+            }
+            else{
+                colorWindow.style.backgroundColor = "#" + value;
+            }
+        })
+    </script>
+</body>
+</html>
